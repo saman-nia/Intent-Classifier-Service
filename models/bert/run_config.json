@@ -1,0 +1,6 @@
+{
+  "train": "data/atis/train.tsv",
+  "test": "data/atis/test.tsv",
+  "out_dir": "models/bert",
+  "epochs": 3
+}

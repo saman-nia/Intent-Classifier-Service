@@ -1,0 +1,45 @@
+[tool.poetry]
+name        = "intent-classifier-service"
+version     = "0.1.0"
+description = "FastAPI intent classifier (baseline + BERT)"
+authors     = ["Saman Nia <saman.p.nia@gmail.com>"]
+license     = "MIT"
+readme      = "README.md"
+packages    = [{ include = "app" }]
+
+[[tool.poetry.source]]
+name     = "pytorch-cpu"
+url      = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[tool.poetry.dependencies]
+python           = "^3.10"
+
+# web API stack
+fastapi          = "^0.95.2"
+uvicorn          = { extras = ["standard"], version = "^0.22.0" }
+pydantic         = "^1.10.7"
+python-dotenv    = "^1.0.0"
+
+# ML baseline
+numpy            = "<2"
+scikit-learn     = "^1.5.2"
+
+# PyTorch (CPU wheel)
+torch = { version = "2.2.2", source = "pytorch-cpu" }
+
+# Hugging-Face ecosystem (for BERT)
+transformers     = "^4.41.2"
+datasets         = "^2.19.0"
+accelerate       = "^0.29.3"
+
+[tool.poetry.dev-dependencies]
+pytest           = "^7.3.1"
+pytest-asyncio   = "^0.21.0"
+pytest-cov       = "^4.0.0"
+mypy             = "^1.6.0"
+flake8           = "^6.0.0"
+
+[build-system]
+requires         = ["poetry-core>=1.4.0"]
+build-backend    = "poetry.core.masonry.api"

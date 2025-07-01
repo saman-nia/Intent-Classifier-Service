@@ -1,0 +1,11 @@
+{
+  "train": "data/atis/train.tsv",
+  "test": "data/atis/test.tsv",
+  "out_dir": "models/fasttext",
+  "epochs": 20,
+  "bs": 64,
+  "lr": 0.0003,
+  "embed_dim": 128,
+  "patience": 3,
+  "seed": 42
+}

@@ -1,0 +1,6 @@
+[tool.hatch.envs.default]
+plugin = "poetry"
+
+[envs.default.scripts]
+start = "python -m uvicorn app.main:app --host 0.0.0.0 --port {env:PORT:8000}"
+
